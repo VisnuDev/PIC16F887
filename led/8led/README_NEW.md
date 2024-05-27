@@ -5,14 +5,23 @@ This project demonstrates a simple application of controlling LEDs using button 
 
 # Requirements
 PIC microcontroller (e.g., PIC16F877A).
+
 MPLAB XC8 compiler.
+
 PICkit programmer.
+
 LEDs.
+
 Resistors.
+
 Breadboard.
+
 Push buttons.
+
 Circuit Diagram.
+
 Proteus simulation software.
+
 
 ## Code Explanation
 The provided code initializes two push buttons (b1 and b2) connected to pins RC0 and RC1 respectively. It then continuously monitors these buttons. When b1 is pressed, the code shifts a bit through PORTA LEDs in one direction. When b2 is pressed, the code shifts the bit in the opposite direction. The LEDs connected to PORTA represent the output.
