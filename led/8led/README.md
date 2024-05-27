@@ -34,6 +34,7 @@ https://github.com/VisnuDev/PIC16F887/assets/87351344/657ce114-4884-470d-bcb3-05
 
 
 **Notes**
+
 Ensure that the delay function (__delay_ms()) is properly implemented for the specified delay time.
 Adjust the delay time according to your preference or application requirements.
 
