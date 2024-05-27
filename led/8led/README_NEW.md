@@ -26,5 +26,6 @@ Press button 1 to shift LEDs in one direction and button 2 to shift LEDs in the 
 
 
 ## Notes
+
 Ensure that the delay function (__delay_ms()) is properly implemented for the specified delay time.
 Adjust the delay time according to your preference or application requirements.
