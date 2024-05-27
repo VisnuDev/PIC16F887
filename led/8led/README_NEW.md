@@ -28,7 +28,7 @@ The provided code initializes two push buttons (b1 and b2) connected to pins RC0
 
 ## Embedded C- Bitwise operator
 
-The code used in the project is available in 8led.c file. The led increment/decrement operation was implemmented through logical bitwise operator (<< and >>). The knowledge of these bitwise operators are required to understand or build the project. 
+The code used in the project is available in the 8led.c file. The led increment/decrement operation was implemented through logical bitwise operators (<< and >>). The knowledge of these bitwise operators is required to understand or build the project.
 
 ## Proteus simulation
 
