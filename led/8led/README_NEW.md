@@ -6,7 +6,7 @@ This project demonstrates a simple application of controlling LEDs using button 
 # Requirements
 PIC microcontroller (e.g., PIC16F877A).
 MPLAB XC8 compiler.
-PICkit programmer or equivalent.
+PICkit programmer.
 LEDs.
 Resistors.
 Breadboard.
