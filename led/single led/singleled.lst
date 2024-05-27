@@ -1,0 +1,645 @@
+
+
+HI-TECH Software PIC LITE Macro Assembler V9.81 build 7503 
+                                                                                               Fri Aug 17 11:10:13 2018
+
+HI-TECH Software Omniscient Code Generator (Lite mode) build 7503
+     1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 7503"
+     2                           
+     3                           opt pagewidth 120
+     4                           
+     5                           	opt lm
+     6                           
+     7                           	processor	16F887
+     8                           clrc	macro
+     9                           	bcf	3,0
+    10  0000                     	endm
+    11                           clrz	macro
+    12                           	bcf	3,2
+    13  0000                     	endm
+    14                           setc	macro
+    15                           	bsf	3,0
+    16  0000                     	endm
+    17                           setz	macro
+    18                           	bsf	3,2
+    19  0000                     	endm
+    20                           skipc	macro
+    21                           	btfss	3,0
+    22  0000                     	endm
+    23                           skipz	macro
+    24                           	btfss	3,2
+    25  0000                     	endm
+    26                           skipnc	macro
+    27                           	btfsc	3,0
+    28  0000                     	endm
+    29                           skipnz	macro
+    30                           	btfsc	3,2
+    31  0000                     	endm
+    32  0000                     indf	equ	0
+    33  0000                     indf0	equ	0
+    34  0002                     pc	equ	2
+    35  0002                     pcl	equ	2
+    36  0003                     status	equ	3
+    37  0004                     fsr	equ	4
+    38  0004                     fsr0	equ	4
+    39  0001                     c	equ	1
+    40  0000                     z	equ	0
+    41  000A                     pclath	equ	10
+    42                           	FNROOT	_main
+    43                           	global	_PORTA
+    44                           psect	maintext,global,class=CODE,delta=2
+    45                           global __pmaintext
+    46  0765                     __pmaintext:
+    47  0005                     _PORTA	set	5
+    48                           	global	_PORTC
+    49  0007                     _PORTC	set	7
+    50                           	global	_RC0
+    51  0038                     _RC0	set	56
+    52                           	global	_RC1
+    53  0039                     _RC1	set	57
+    54                           	global	_RC2
+    55  003A                     _RC2	set	58
+    56                           	global	_TRISA
+    57  0085                     _TRISA	set	133
+    58                           	global	_TRISC
+    59  0087                     _TRISC	set	135
+    60                           	global	_ANSEL
+    61  0188                     _ANSEL	set	392
+    62                           	global	_ANSELH
+    63  0189                     _ANSELH	set	393
+    64                           	file	"singleled.as"
+    65                           	line	#
+    66                           psect cinit,class=CODE,delta=2
+    67                           global start_initialization
+    68  0761                     start_initialization:
+    69                           
+    70                           psect cinit,class=CODE,delta=2
+    71                           global end_of_initialization
+    72                           
+    73                           ;End of C runtime variable initialization code
+    74                           
+    75  0761                     end_of_initialization:
+    76  0761  0183               clrf status
+    77  0762  120A  118A  2F65   ljmp _main	;jump to C main() function
+    78                           psect	cstackCOMMON,class=COMMON,space=1
+    79                           global __pcstackCOMMON
+    80  0070                     __pcstackCOMMON:
+    81                           	global	?_main
+    82  0070                     ?_main:	; 0 bytes @ 0x0
+    83                           	global	??_main
+    84  0070                     ??_main:	; 0 bytes @ 0x0
+    85  0070                     	ds	2
+    86                           	global	main@a
+    87  0072                     main@a:	; 1 bytes @ 0x2
+    88  0072                     	ds	1
+    89                           	global	main@i
+    90  0073                     main@i:	; 1 bytes @ 0x3
+    91  0073                     	ds	1
+    92 ;;Data sizes: Strings 0, constant 0, data 0, bss 0, persistent 0 stack 0
+    93 ;;Auto spaces:   Size  Autos    Used
+    94 ;; COMMON          14      4       4
+    95 ;; BANK0           80      0       0
+    96 ;; BANK1           80      0       0
+    97 ;; BANK3           96      0       0
+    98 ;; BANK2           96      0       0
+    99                           
+   100 ;;
+   101 ;; Pointer list with targets:
+   102                           
+   103                           
+   104                           
+   105 ;;
+   106 ;; Critical Paths under _main in COMMON
+   107 ;;
+   108 ;;   None.
+   109 ;;
+   110 ;; Critical Paths under _main in BANK0
+   111 ;;
+   112 ;;   None.
+   113 ;;
+   114 ;; Critical Paths under _main in BANK1
+   115 ;;
+   116 ;;   None.
+   117 ;;
+   118 ;; Critical Paths under _main in BANK3
+   119 ;;
+   120 ;;   None.
+   121 ;;
+   122 ;; Critical Paths under _main in BANK2
+   123 ;;
+   124 ;;   None.
+   125                           
+   126 ;;
+   127 ;;Main: autosize = 0, tempsize = 2, incstack = 0, save=0
+   128 ;;
+   129                           
+   130 ;;
+   131 ;;Call Graph Tables:
+   132 ;;
+   133 ;; ---------------------------------------------------------------------------------
+   134 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   135 ;; ---------------------------------------------------------------------------------
+   136 ;; (0) _main                                                 4     4      0      30
+   137 ;;                                              0 COMMON     4     4      0
+   138 ;; ---------------------------------------------------------------------------------
+   139 ;; Estimated maximum stack depth 0
+   140 ;; ---------------------------------------------------------------------------------
+   141                           
+   142 ;; Call Graph Graphs:
+   143                           
+   144 ;; _main (ROOT)
+   145 ;;
+   146                           
+   147 ;; Address spaces:
+   148                           
+   149 ;;Name               Size   Autos  Total    Cost      Usage
+   150 ;;BITCOMMON            E      0       0       0        0.0%
+   151 ;;EEDATA             100      0       0       0        0.0%
+   152 ;;NULL                 0      0       0       0        0.0%
+   153 ;;CODE                 0      0       0       0        0.0%
+   154 ;;COMMON               E      4       4       1       28.6%
+   155 ;;BITSFR0              0      0       0       1        0.0%
+   156 ;;SFR0                 0      0       0       1        0.0%
+   157 ;;BITSFR1              0      0       0       2        0.0%
+   158 ;;SFR1                 0      0       0       2        0.0%
+   159 ;;STACK                0      0       0       2        0.0%
+   160 ;;ABS                  0      0       0       3        0.0%
+   161 ;;BITBANK0            50      0       0       4        0.0%
+   162 ;;BITSFR3              0      0       0       4        0.0%
+   163 ;;SFR3                 0      0       0       4        0.0%
+   164 ;;BANK0               50      0       0       5        0.0%
+   165 ;;BITSFR2              0      0       0       5        0.0%
+   166 ;;SFR2                 0      0       0       5        0.0%
+   167 ;;BITBANK1            50      0       0       6        0.0%
+   168 ;;BANK1               50      0       0       7        0.0%
+   169 ;;BITBANK3            60      0       0       8        0.0%
+   170 ;;BANK3               60      0       0       9        0.0%
+   171 ;;BITBANK2            60      0       0      10        0.0%
+   172 ;;BANK2               60      0       0      11        0.0%
+   173 ;;DATA                 0      0       0      12        0.0%
+   174                           
+   175                           	global	_main
+   176                           psect	maintext
+   177                           
+   178 ;; *************** function _main *****************
+   179 ;; Defined at:
+   180 ;;		line 7 in file "D:\pic\programs\PIC16f887\led\single led\singleled.c"
+   181 ;; Parameters:    Size  Location     Type
+   182 ;;		None
+   183 ;; Auto vars:     Size  Location     Type
+   184 ;;  i               1    3[COMMON] unsigned char 
+   185 ;;  a               1    2[COMMON] unsigned char 
+   186 ;; Return value:  Size  Location     Type
+   187 ;;		None               void
+   188 ;; Registers used:
+   189 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+   190 ;; Tracked objects:
+   191 ;;		On entry : 17F/0
+   192 ;;		On exit  : 0/0
+   193 ;;		Unchanged: 0/0
+   194 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   195 ;;      Params:         0       0       0       0       0
+   196 ;;      Locals:         2       0       0       0       0
+   197 ;;      Temps:          2       0       0       0       0
+   198 ;;      Totals:         4       0       0       0       0
+   199 ;;Total ram usage:        4 bytes
+   200 ;; This function calls:
+   201 ;;		Nothing
+   202 ;; This function is called by:
+   203 ;;		Startup code after reset
+   204 ;; This function uses a non-reentrant model
+   205 ;;
+   206                           psect	maintext
+   207                           	file	"D:\pic\programs\PIC16f887\led\single led\singleled.c"
+   208                           	line	7
+   209                           	global	__size_of_main
+   210  009B                     	__size_of_main	equ	__end_of_main-_main
+   211                           	
+   212  0765                     _main:	
+   213                           	opt	stack 8
+   214                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0]
+   215                           	line	9
+   216                           	
+   217  0765                     l2190:	
+   218                           ;singleled.c: 9: TRISA=0x00;
+   219  0765  1683               	bsf	status, 5	;RP0=1, select bank1
+   220  0766  1303               	bcf	status, 6	;RP1=0, select bank1
+   221  0767  0185               	clrf	(133)^080h	;volatile
+   222                           	line	10
+   223                           	
+   224  0768                     l2192:	
+   225                           ;singleled.c: 10: TRISC=0x07;
+   226  0768  3007               	movlw	(07h)
+   227  0769  0087               	movwf	(135)^080h	;volatile
+   228                           	line	11
+   229                           	
+   230  076A                     l2194:	
+   231                           ;singleled.c: 11: ANSEL=ANSELH=0;
+   232  076A  1683               	bsf	status, 5	;RP0=1, select bank3
+   233  076B  1703               	bsf	status, 6	;RP1=1, select bank3
+   234  076C  0189               	clrf	(393)^0180h	;volatile
+   235  076D  0188               	clrf	(392)^0180h	;volatile
+   236                           	line	12
+   237                           	
+   238  076E                     l2196:	
+   239                           ;singleled.c: 12: PORTA=0;
+   240  076E  1283               	bcf	status, 5	;RP0=0, select bank0
+   241  076F  1303               	bcf	status, 6	;RP1=0, select bank0
+   242  0770  0185               	clrf	(5)	;volatile
+   243                           	line	13
+   244                           	
+   245  0771                     l2198:	
+   246                           ;singleled.c: 13: PORTC=0;
+   247  0771  0187               	clrf	(7)	;volatile
+   248                           	line	14
+   249                           	
+   250  0772                     l2200:	
+   251                           ;singleled.c: 14: char a=0,i=0;
+   252  0772  01F2               	clrf	(main@a)
+   253                           	
+   254  0773                     l2202:	
+   255  0773  01F3               	clrf	(main@i)
+   256  0774  2F77               	goto	l1029
+   257                           	line	15
+   258                           ;singleled.c: 15: while(1)
+   259                           	
+   260  0775                     l1027:	
+   261  0775  2F77               	goto	l1029
+   262                           	line	17
+   263                           ;singleled.c: 16: {{{
+   264                           ;singleled.c: 17: again:
+   265                           	
+   266  0776                     l1028:	
+   267                           	line	18
+   268                           ;singleled.c: 18: while(RC0==0&&RC1==0);
+   269  0776  2F77               	goto	l1029
+   270                           	
+   271  0777                     l1030:	
+   272                           	
+   273  0777                     l1029:	
+   274  0777  1283               	bcf	status, 5	;RP0=0, select bank0
+   275  0778  1303               	bcf	status, 6	;RP1=0, select bank0
+   276  0779  1807               	btfsc	(56/8),(56)&7
+   277  077A  2F7C               	goto	u2141
+   278  077B  2F7D               	goto	u2140
+   279  077C                     u2141:
+   280  077C  2F82               	goto	l1033
+   281  077D                     u2140:
+   282                           	
+   283  077D                     l2204:	
+   284  077D  1C87               	btfss	(57/8),(57)&7
+   285  077E  2F80               	goto	u2151
+   286  077F  2F81               	goto	u2150
+   287  0780                     u2151:
+   288  0780  2F77               	goto	l1029
+   289  0781                     u2150:
+   290  0781  2F82               	goto	l1033
+   291                           	
+   292  0782                     l1032:	
+   293                           	
+   294  0782                     l1033:	
+   295                           	line	19
+   296                           ;singleled.c: 19: if(RC0==1)
+   297  0782  1C07               	btfss	(56/8),(56)&7
+   298  0783  2F85               	goto	u2161
+   299  0784  2F86               	goto	u2160
+   300  0785                     u2161:
+   301  0785  2F8B               	goto	l2208
+   302  0786                     u2160:
+   303                           	line	20
+   304                           	
+   305  0786                     l2206:	
+   306                           ;singleled.c: 20: i++;
+   307  0786  3001               	movlw	(01h)
+   308  0787  00F0               	movwf	(??_main+0)+0
+   309  0788  0870               	movf	(??_main+0)+0,w
+   310  0789  07F3               	addwf	(main@i),f
+   311  078A  2F8B               	goto	l2208
+   312                           	
+   313  078B                     l1034:	
+   314                           	line	21
+   315                           	
+   316  078B                     l2208:	
+   317                           ;singleled.c: 21: if(RC1==1)
+   318  078B  1C87               	btfss	(57/8),(57)&7
+   319  078C  2F8E               	goto	u2171
+   320  078D  2F8F               	goto	u2170
+   321  078E                     u2171:
+   322  078E  2F95               	goto	l1037
+   323  078F                     u2170:
+   324                           	line	23
+   325                           	
+   326  078F                     l2210:	
+   327                           ;singleled.c: 22: {
+   328                           ;singleled.c: 23: a=i;
+   329  078F  0873               	movf	(main@i),w
+   330  0790  00F0               	movwf	(??_main+0)+0
+   331  0791  0870               	movf	(??_main+0)+0,w
+   332  0792  00F2               	movwf	(main@a)
+   333                           	line	24
+   334                           ;singleled.c: 24: goto glow;
+   335  0793  2FCE               	goto	l2232
+   336                           	line	25
+   337                           	
+   338  0794                     l1035:	
+   339                           	line	26
+   340                           ;singleled.c: 25: }
+   341                           ;singleled.c: 26: while(RC0==1);
+   342  0794  2F95               	goto	l1037
+   343                           	
+   344  0795                     l1038:	
+   345                           	
+   346  0795                     l1037:	
+   347  0795  1807               	btfsc	(56/8),(56)&7
+   348  0796  2F98               	goto	u2181
+   349  0797  2F99               	goto	u2180
+   350  0798                     u2181:
+   351  0798  2F95               	goto	l1037
+   352  0799                     u2180:
+   353  0799  2F9A               	goto	l2212
+   354                           	
+   355  079A                     l1039:	
+   356                           	line	27
+   357                           	
+   358  079A                     l2212:	
+   359                           ;singleled.c: 27: _delay((unsigned long)((100)*(4000000/4000.0)));
+   360                           	opt asmopt_off
+   361  079A  3082               movlw	130
+   362  079B  00F1               movwf	((??_main+0)+0+1),f
+   363  079C  30DD               	movlw	221
+   364  079D  00F0               movwf	((??_main+0)+0),f
+   365  079E                     u2207:
+   366  079E  0BF0               	decfsz	((??_main+0)+0),f
+   367  079F  2F9E               	goto	u2207
+   368  07A0  0BF1               	decfsz	((??_main+0)+0+1),f
+   369  07A1  2F9E               	goto	u2207
+   370  07A2  2FA3               	nop2
+   371                           opt asmopt_on
+   372                           
+   373                           	line	28
+   374                           ;singleled.c: 28: goto again;
+   375  07A3  2F77               	goto	l1029
+   376                           	line	32
+   377                           ;singleled.c: 29: }
+   378                           ;singleled.c: 30: }
+   379                           ;singleled.c: 32: glow:
+   380                           	
+   381  07A4                     l1036:	
+   382                           	line	33
+   383                           ;singleled.c: 33: switch(a)
+   384  07A4  2FCE               	goto	l2232
+   385                           	line	35
+   386                           ;singleled.c: 34: {
+   387                           ;singleled.c: 35: case 1:PORTA=0x01;
+   388                           	
+   389  07A5                     l1041:	
+   390                           	
+   391  07A5                     l2214:	
+   392  07A5  3001               	movlw	(01h)
+   393  07A6  1283               	bcf	status, 5	;RP0=0, select bank0
+   394  07A7  1303               	bcf	status, 6	;RP1=0, select bank0
+   395  07A8  0085               	movwf	(5)	;volatile
+   396                           	line	36
+   397                           ;singleled.c: 36: break;
+   398  07A9  2FE9               	goto	l1050
+   399                           	line	37
+   400                           ;singleled.c: 37: case 2:PORTA=0x03;
+   401                           	
+   402  07AA                     l1043:	
+   403                           	
+   404  07AA                     l2216:	
+   405  07AA  3003               	movlw	(03h)
+   406  07AB  1283               	bcf	status, 5	;RP0=0, select bank0
+   407  07AC  1303               	bcf	status, 6	;RP1=0, select bank0
+   408  07AD  0085               	movwf	(5)	;volatile
+   409                           	line	38
+   410                           ;singleled.c: 38: break;
+   411  07AE  2FE9               	goto	l1050
+   412                           	line	39
+   413                           ;singleled.c: 39: case 3:PORTA=0x07;
+   414                           	
+   415  07AF                     l1044:	
+   416                           	
+   417  07AF                     l2218:	
+   418  07AF  3007               	movlw	(07h)
+   419  07B0  1283               	bcf	status, 5	;RP0=0, select bank0
+   420  07B1  1303               	bcf	status, 6	;RP1=0, select bank0
+   421  07B2  0085               	movwf	(5)	;volatile
+   422                           	line	40
+   423                           ;singleled.c: 40: break;
+   424  07B3  2FE9               	goto	l1050
+   425                           	line	41
+   426                           ;singleled.c: 41: case 4:PORTA=0x0F;
+   427                           	
+   428  07B4                     l1045:	
+   429                           	
+   430  07B4                     l2220:	
+   431  07B4  300F               	movlw	(0Fh)
+   432  07B5  1283               	bcf	status, 5	;RP0=0, select bank0
+   433  07B6  1303               	bcf	status, 6	;RP1=0, select bank0
+   434  07B7  0085               	movwf	(5)	;volatile
+   435                           	line	42
+   436                           ;singleled.c: 42: break;
+   437  07B8  2FE9               	goto	l1050
+   438                           	line	43
+   439                           ;singleled.c: 43: case 5:PORTA=0x1F;
+   440                           	
+   441  07B9                     l1046:	
+   442                           	
+   443  07B9                     l2222:	
+   444  07B9  301F               	movlw	(01Fh)
+   445  07BA  1283               	bcf	status, 5	;RP0=0, select bank0
+   446  07BB  1303               	bcf	status, 6	;RP1=0, select bank0
+   447  07BC  0085               	movwf	(5)	;volatile
+   448                           	line	44
+   449                           ;singleled.c: 44: break;
+   450  07BD  2FE9               	goto	l1050
+   451                           	line	45
+   452                           ;singleled.c: 45: case 6:PORTA=0x3F;
+   453                           	
+   454  07BE                     l1047:	
+   455                           	
+   456  07BE                     l2224:	
+   457  07BE  303F               	movlw	(03Fh)
+   458  07BF  1283               	bcf	status, 5	;RP0=0, select bank0
+   459  07C0  1303               	bcf	status, 6	;RP1=0, select bank0
+   460  07C1  0085               	movwf	(5)	;volatile
+   461                           	line	46
+   462                           ;singleled.c: 46: break;
+   463  07C2  2FE9               	goto	l1050
+   464                           	line	47
+   465                           ;singleled.c: 47: case 7:PORTA=0x7F;
+   466                           	
+   467  07C3                     l1048:	
+   468                           	
+   469  07C3                     l2226:	
+   470  07C3  307F               	movlw	(07Fh)
+   471  07C4  1283               	bcf	status, 5	;RP0=0, select bank0
+   472  07C5  1303               	bcf	status, 6	;RP1=0, select bank0
+   473  07C6  0085               	movwf	(5)	;volatile
+   474                           	line	48
+   475                           ;singleled.c: 48: break;
+   476  07C7  2FE9               	goto	l1050
+   477                           	line	49
+   478                           ;singleled.c: 49: case 8:PORTA=0xFF;
+   479                           	
+   480  07C8                     l1049:	
+   481                           	
+   482  07C8                     l2228:	
+   483  07C8  30FF               	movlw	(0FFh)
+   484  07C9  1283               	bcf	status, 5	;RP0=0, select bank0
+   485  07CA  1303               	bcf	status, 6	;RP1=0, select bank0
+   486  07CB  0085               	movwf	(5)	;volatile
+   487                           	line	50
+   488                           ;singleled.c: 50: break;
+   489  07CC  2FE9               	goto	l1050
+   490                           	line	51
+   491                           	
+   492  07CD                     l2230:	
+   493                           ;singleled.c: 51: }
+   494  07CD  2FE9               	goto	l1050
+   495                           	line	33
+   496                           	
+   497  07CE                     l1040:	
+   498                           	
+   499  07CE                     l2232:	
+   500  07CE  0872               	movf	(main@a),w
+   501                           	; Switch size 1, requested type "space"
+   502                           ; Number of cases is 8, Range of values is 1 to 8
+   503                           ; switch strategies available:
+   504                           ; Name         Instructions Cycles
+   505                           ; simple_byte           25    13 (average)
+   506                           ; direct_byte           35    11 (fixed)
+   507                           ; jumptable            263     9 (fixed)
+   508                           ;	Chosen strategy is simple_byte
+   509                           
+   510                           	opt asmopt_off
+   511  07CF  3A01               	xorlw	1^0	; case 1
+   512  07D0  1903               	skipnz
+   513  07D1  2FA5               	goto	l2214
+   514  07D2  3A03               	xorlw	2^1	; case 2
+   515  07D3  1903               	skipnz
+   516  07D4  2FAA               	goto	l2216
+   517  07D5  3A01               	xorlw	3^2	; case 3
+   518  07D6  1903               	skipnz
+   519  07D7  2FAF               	goto	l2218
+   520  07D8  3A07               	xorlw	4^3	; case 4
+   521  07D9  1903               	skipnz
+   522  07DA  2FB4               	goto	l2220
+   523  07DB  3A01               	xorlw	5^4	; case 5
+   524  07DC  1903               	skipnz
+   525  07DD  2FB9               	goto	l2222
+   526  07DE  3A03               	xorlw	6^5	; case 6
+   527  07DF  1903               	skipnz
+   528  07E0  2FBE               	goto	l2224
+   529  07E1  3A01               	xorlw	7^6	; case 7
+   530  07E2  1903               	skipnz
+   531  07E3  2FC3               	goto	l2226
+   532  07E4  3A0F               	xorlw	8^7	; case 8
+   533  07E5  1903               	skipnz
+   534  07E6  2FC8               	goto	l2228
+   535  07E7  2FE9               	goto	l1050
+   536                           	opt asmopt_on
+   537                           
+   538                           	line	51
+   539                           	
+   540  07E8                     l1042:	
+   541                           	line	52
+   542                           ;singleled.c: 52: while(RC2==0);
+   543  07E8  2FE9               	goto	l1050
+   544                           	
+   545  07E9                     l1051:	
+   546                           	
+   547  07E9                     l1050:	
+   548  07E9  1283               	bcf	status, 5	;RP0=0, select bank0
+   549  07EA  1303               	bcf	status, 6	;RP1=0, select bank0
+   550  07EB  1D07               	btfss	(58/8),(58)&7
+   551  07EC  2FEE               	goto	u2191
+   552  07ED  2FEF               	goto	u2190
+   553  07EE                     u2191:
+   554  07EE  2FE9               	goto	l1050
+   555  07EF                     u2190:
+   556  07EF  2FF0               	goto	l2234
+   557                           	
+   558  07F0                     l1052:	
+   559                           	line	53
+   560                           	
+   561  07F0                     l2234:	
+   562                           ;singleled.c: 53: PORTA=0;
+   563  07F0  0185               	clrf	(5)	;volatile
+   564                           	line	54
+   565                           	
+   566  07F1                     l2236:	
+   567                           ;singleled.c: 54: i=0;
+   568  07F1  01F3               	clrf	(main@i)
+   569                           	line	55
+   570                           	
+   571  07F2                     l2238:	
+   572                           ;singleled.c: 55: _delay((unsigned long)((100)*(4000000/4000.0)));
+   573                           	opt asmopt_off
+   574  07F2  3082               movlw	130
+   575  07F3  00F1               movwf	((??_main+0)+0+1),f
+   576  07F4  30DD               	movlw	221
+   577  07F5  00F0               movwf	((??_main+0)+0),f
+   578  07F6                     u2217:
+   579  07F6  0BF0               	decfsz	((??_main+0)+0),f
+   580  07F7  2FF6               	goto	u2217
+   581  07F8  0BF1               	decfsz	((??_main+0)+0+1),f
+   582  07F9  2FF6               	goto	u2217
+   583  07FA  2FFB               	nop2
+   584                           opt asmopt_on
+   585                           
+   586  07FB  2F77               	goto	l1029
+   587                           	line	56
+   588                           	
+   589  07FC                     l1053:	
+   590                           	line	15
+   591  07FC  2F77               	goto	l1029
+   592                           	
+   593  07FD                     l1054:	
+   594                           	line	57
+   595                           	
+   596  07FD                     l1055:	
+   597                           	global	start
+   598  07FD  120A  118A  2800   	ljmp	start
+   599                           	opt stack 0
+   600                           GLOBAL	__end_of_main
+   601  0800                     	__end_of_main:
+   602 ;; =============== function _main ends ============
+   603                           
+   604                           	signat	_main,88
+   605                           psect	maintext
+   606                           	global	btemp
+   607  007E                     	btemp set 07Eh
+   608                           
+   609                           	DABS	1,126,2	;btemp
+   610                           	global	wtemp0
+   611  007E                     	wtemp0 set btemp
+
+
+HI-TECH Software PICC Macro Assembler V9.81 build 7503 
+Symbol Table                                                                                   Fri Aug 17 11:10:13 2018
+
+                 _RC0 0038                   _RC1 0039                   _RC2 003A                  l1030 0777  
+                l1040 07CE                  l1032 0782                  l1041 07A5                  l1033 0782  
+                l1042 07E8                  l1050 07E9                  l1034 078B                  l1051 07E9  
+                l1043 07AA                  l1035 0794                  l1027 0775                  l1052 07F0  
+                l1044 07AF                  l1036 07A4                  l1028 0776                  l1053 07FC  
+                l1045 07B4                  l1037 0795                  l1029 0777                  l1054 07FD  
+                l1046 07B9                  l1038 0795                  l1055 07FD                  l1047 07BE  
+                l1039 079A                  l1048 07C3                  l2200 0772                  l1049 07C8  
+                l2210 078F                  l2202 0773                  l2220 07B4                  l2212 079A  
+                l2204 077D                  l2230 07CD                  l2222 07B9                  l2214 07A5  
+                l2206 0786                  l2224 07BE                  l2216 07AA                  l2232 07CE  
+                l2208 078B                  l2234 07F0                  l2226 07C3                  l2218 07AF  
+                l2236 07F1                  l2228 07C8                  l2238 07F2                  l2190 0765  
+                l2192 0768                  l2194 076A                  l2196 076E                  l2198 0771  
+                u2140 077D                  u2141 077C                  u2150 0781                  u2207 079E  
+                u2151 0780                  u2160 0786                  u2217 07F6                  u2161 0785  
+                u2170 078F                  u2171 078E                  u2180 0799                  u2181 0798  
+                u2190 07EF                  u2191 07EE                  _main 0765                  btemp 007E  
+                start 0000                 ?_main 0070                 _ANSEL 0188                 _PORTA 0005  
+               _PORTC 0007                 _TRISA 0085                 _TRISC 0087                 main@a 0072  
+               main@i 0073                 status 0003                 wtemp0 007E          __end_of_main 0800  
+              ??_main 0070                _ANSELH 0189        __pcstackCOMMON 0070            __pmaintext 0765  
+end_of_initialization 0761   start_initialization 0761         __size_of_main 009B  
