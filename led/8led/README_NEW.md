@@ -26,12 +26,29 @@ Proteus simulation software.
 ## Code Explanation
 The provided code initializes two push buttons (b1 and b2) connected to pins RC0 and RC1 respectively. It then continuously monitors these buttons. When b1 is pressed, the code shifts a bit through PORTA LEDs in one direction. When b2 is pressed, the code shifts the bit in the opposite direction. The LEDs connected to PORTA represent the output.
 
+## Embedded C- Bitwise operator
+
+The code used in the project is available in 8led.c file. The led increment/decrement operation was implemmented through logical bitwise operator (<< and >>). The knowledge of these bitwise operators are required to understand or build the project. 
+
+## Proteus simulation
+
+The Project is simulated in proteus simulation software. 
+
+https://github.com/VisnuDev/PIC16F887/assets/87351344/00950281-4a54-400e-b4a9-82851ebf50c7
+
+
+
 ## How to Use
 Connect the PIC microcontroller to the circuit according to the provided circuit diagram.
+
 Compile the code using MPLAB XC8 compiler.
+
 Program the microcontroller using PICkit programmer or equivalent.
+
 Power up the circuit.
+
 Press button 1 to shift LEDs in one direction and button 2 to shift LEDs in the opposite direction.
+
 
 
 ## Notes
